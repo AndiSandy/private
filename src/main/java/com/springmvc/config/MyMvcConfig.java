@@ -1,5 +1,6 @@
 package com.springmvc.config;
 
+import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -27,7 +28,6 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
         return viewResolver;
 
     }
-
     /*重写此方法设置访问静态资源路径*/
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -53,6 +53,11 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
         return multipartResolver;
     }
 
+//    public DruidDataSource druidDataSource(){
+//        DruidDataSource druidDataSource  = new DruidDataSource();
+//        druidDataSource.setConnectProperties();
+//        return  druidDataSource;
+//    }
 
     /*@Bean
     public DemoInterceptor demoInterceptor(){
